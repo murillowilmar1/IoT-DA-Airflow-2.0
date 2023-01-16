@@ -33,6 +33,8 @@ las carpetas estan en el orden en la que se debe ejecutar el proyecto paso a pas
 - **IoT_Ubidots** :  
 
 
+- **DB_posgresql** :  
+
 
 
 
