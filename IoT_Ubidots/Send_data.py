@@ -14,7 +14,7 @@ except Exception as ex:
     print(ex)     
 
 
-puerto =serial.Serial(port = "COM7", 
+puerto =serial.Serial(port = "COM6", 
                        baudrate =115200)
 while True: 
 
@@ -23,12 +23,12 @@ while True:
     dato= data.split()
     #print(data)
     temperatura = float(dato[1].decode("utf-8"))
-    humedad = float(dato[0].decode("utf-8"))
-    query = "INSERT INTO arduino_table (temperatura) VALUES(%s)" % temperatura
+    hum = float(dato[0].decode("utf-8"))
+    query = "INSERT INTO arduino_table (temperatura) VALUES(%s)" %temperatura
     print(query)
     cursor.execute(query)
     connection.commit()
-    query = "INSERT INTO arduino_table (temperatura) VALUES(%s)" % humedad
+    query = "INSERT INTO arduino_table (hum) VALUES(%s)" %hum
     print(query)
     cursor.execute(query)
     connection.commit()
