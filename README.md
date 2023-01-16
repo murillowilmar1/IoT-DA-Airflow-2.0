@@ -36,6 +36,8 @@ las carpetas estan en el orden en la que se debe ejecutar el proyecto paso a pas
 - **DB_posgresql** :  
 
 
+- **Airflow_process** :  
+
 
 
 ## Contexto
