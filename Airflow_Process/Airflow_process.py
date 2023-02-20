@@ -11,6 +11,7 @@ from airflow.models.baseoperator import chain
 
 
 from dags.funtions.extract import extr_data
+from dags.funtions.Transform import transf
 
 
 default_args = {
@@ -26,7 +27,7 @@ default_args = {
 
 with DAG(
 
-     "Sales_dag", 
+     "IoT_Dag", 
      default_args=default_args,
      start_date= datetime(2022,1,12),
      max_active_runs =5, 
@@ -41,3 +42,18 @@ with DAG(
 
   #Task 1 
        extract_data= PythonOperator(task_id="extract_data", python_callable=extr_data)
+  #Task 2 
+       Transform_data =  PythonOperator(task_id ="Transform_data", python_callable=transf) 
+  #Task 3 
+       load_data =LocalFilesystemToS3Operator(
+        task_id = "load_data",
+        filename='/usr/local/airflow/tests/Sales_data_clean.csv',
+        dest_key='Sales_data_clean.csv',
+        dest_bucket='awswmurillo',
+        aws_conn_id="aws_s3",
+        replace=True
+     )     
+
+
+
+       extract_data >> Transform_data >> load_data
