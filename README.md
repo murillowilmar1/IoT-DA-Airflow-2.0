@@ -44,9 +44,8 @@ las carpetas estan en el orden en la que se debe ejecutar el proyecto paso a pas
 
 ## Contexto
 
+El proyecto se realiza con el fin de extraer datos de un placa arduino como proceso IoT, para garantizar que se tomen datos en tiempo real y posterior a esto poder analizarlos y disponibilizarlos en un bucket de S3 AWS 
 
-
-## Requerimientos 
 
 
 
