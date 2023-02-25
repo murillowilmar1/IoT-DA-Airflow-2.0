@@ -35,10 +35,10 @@ las carpetas estan en el orden en la que se debe ejecutar el proyecto paso a pas
  entregarlos a postgresql
 
 
-- **DB_posgresql** :  En esta carpet se encuentra la consulta de Postgresql, esta consulta servira para pasar a la fase de transformación con apache airflow 
+- **DB_posgresql** :  En esta carpeta se encuentra la consulta de Postgresql, esta consulta servira para pasar a la fase de transformación con apache airflow 
 
 
-- **Airflow_process** :  
+- **Airflow_process** :  En esta carpeta se encuentra los archivos DAG con sus respectivas funciones para realizar el proceso de ETL(Extracción, Transformación y Carga) 
 
 
 
